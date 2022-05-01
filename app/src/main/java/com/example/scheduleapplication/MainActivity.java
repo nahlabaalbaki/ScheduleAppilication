@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        button1 = (Button) findViewById(R.id.btn1);
+        button2 = (Button) findViewById(R.id.btn2);
+        button3 = (Button) findViewById(R.id.btn3);
+        button4 = (Button) findViewById(R.id.btn4);
+
         try{
             SQLiteDatabase sql = this.openOrCreateDatabase("scheduleapp",MODE_PRIVATE,null);
             sql.execSQL("CREATE Table IF NOT EXISTS courses(name VARCHAR, website VARCHAR)");
@@ -39,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             while(c!=null){
                 String str = c.getString(nameindex) + "" + c.getString(webindex);
-                Toast.makeText(getApplicationContext(), str,Toast.LENGTH_LONG).show();
+                c.moveToNext();
             }
 
 
