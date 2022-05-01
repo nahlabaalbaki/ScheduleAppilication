@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -31,8 +32,19 @@ public class MainActivity extends AppCompatActivity {
             sql.execSQL("INSERT INTO courses(name,wesbite) VALUES ('Natural Language Processing','https://www.nlp.com/what-is-nlp/')");
 
 
-        }catch(Exception e){
+            Cursor c = sql.rawQuery("SELECT * from courses", null);
+            int nameindex = c.getColumnIndex("name");
+            int webindex = c.getColumnIndex("website");
+            c.moveToFirst();
 
+            while(c!=null){
+                String str = c.getString(nameindex) + "" + c.getString(webindex);
+                Toast.makeText(getApplicationContext(), str,Toast.LENGTH_LONG).show();
+            }
+
+
+        }catch(Exception e){
+            e.printStackTrace();
         }
         
     }
