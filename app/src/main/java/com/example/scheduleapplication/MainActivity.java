@@ -2,13 +2,12 @@ package com.example.scheduleapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     
@@ -27,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         button3 = (Button) findViewById(R.id.btn3);
         button4 = (Button) findViewById(R.id.btn4);
 
-        try{
-            SQLiteDatabase sql = this.openOrCreateDatabase("scheduleapp",MODE_PRIVATE,null);
+        try {
+            SQLiteDatabase sql = this.openOrCreateDatabase("scheduleapp", MODE_PRIVATE, null);
             sql.execSQL("CREATE Table IF NOT EXISTS courses(name VARCHAR, website VARCHAR)");
 
             sql.execSQL("INSERT INTO courses(name,wesbite) VALUES ('Mobile Development','https://ionicframework.com/')");
@@ -42,29 +41,38 @@ public class MainActivity extends AppCompatActivity {
             int webindex = c.getColumnIndex("website");
             c.moveToFirst();
 
-
-
-            while(c!=null){
-                if(button1.getText()==""){
+            while (c != null) {
+                if (button1.getText() == "") {
                     button1.setText(nameindex);
-                }
-                if(button2.getText()==""){
-                    button1.setText(nameindex);
-                }
-                if(button3.getText()==""){
-                    button1.setText(nameindex);
-                }
-                if(button4.getText()==""){
-                    button1.setText(nameindex);
+                } else if (button2.getText() == "") {
+                    button2.setText(nameindex);
+                } else if (button3.getText() == "") {
+                    button3.setText(nameindex);
+                } else if (button4.getText() == "") {
+                    button4.setText(nameindex);
                 }
 
-                c.moveToNext();
             }
-
-
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
+    }
+
+    public void mobile(View view){
+        Intent intent1 = new Intent(this, Mobile.class);
+        startActivity(intent1);
+    }
+    public void game(View view){
+        Intent intent2 = new Intent(this, Game.class);
+        startActivity(intent2);
+    }
+    public void parallel(View view){
+        Intent intent3 = new Intent(this, Parallel.class);
+        startActivity(intent3);
+    }
+    public void nlp(View view){
+        Intent intent4 = new Intent(this, Nlp.class);
+        startActivity(intent4);
     }
 }

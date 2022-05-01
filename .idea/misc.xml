@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lenovo/Desktop/Mobile/ScheduleApplication/app/src/main/res/layout/activity_game.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/Lenovo/Desktop/Mobile/ScheduleApplication/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/Desktop/Mobile/ScheduleApplication/app/src/main/res/layout/activity_main2.xml" value="0.25226449275362317" />
+        <entry key="..\:/Users/Lenovo/Desktop/Mobile/ScheduleApplication/app/src/main/res/layout/activity_mobile.xml" value="0.25226449275362317" />
+        <entry key="..\:/Users/Lenovo/Desktop/Mobile/ScheduleApplication/app/src/main/res/layout/activity_nlp.xml" value="0.25226449275362317" />
+        <entry key="..\:/Users/Lenovo/Desktop/Mobile/ScheduleApplication/app/src/main/res/layout/activity_parallel.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>
