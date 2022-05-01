@@ -42,8 +42,22 @@ public class MainActivity extends AppCompatActivity {
             int webindex = c.getColumnIndex("website");
             c.moveToFirst();
 
+
+
             while(c!=null){
-                String str = c.getString(nameindex) + "" + c.getString(webindex);
+                if(button1.getText()==""){
+                    button1.setText(nameindex);
+                }
+                if(button2.getText()==""){
+                    button1.setText(nameindex);
+                }
+                if(button3.getText()==""){
+                    button1.setText(nameindex);
+                }
+                if(button4.getText()==""){
+                    button1.setText(nameindex);
+                }
+
                 c.moveToNext();
             }
 
